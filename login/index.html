@@ -4,20 +4,8 @@
   <meta charset="UTF-8">
   <title></title>
   <style>
-    #sign-up {
-      padding-top: 30vh;
-      margin: auto;
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    #sign-up input {
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
     #login {
+      padding-top: 30vh;
       margin: auto;
       width: 50%;
       display: flex;
@@ -28,19 +16,28 @@
       padding: 10px;
       margin-bottom: 10px;
     }
+
+    #sign-up {
+      margin: auto;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #sign-up input {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
-  <form id="sign-up">
-    <input type="text" placeholder="First Name" name="first_name" id="first_name">
-    <input type="text" placeholder="Last Name" name="last_name" id="last_name">
+  <form id="login">
     <input type="email" placeholder="email" name="email" id="email">
     <input type="password" placeholder="password" name="password" id="password">
-    <input type="textarea" placeholder="summary" name="summary" id="summary">
     <input type="submit">
   </form>
-  <div id="login">
-    <a href="/login"><button>Login</button></a>
+  <div id="sign-up">
+    <a href="/"><button>Sign Up</button></a>
   </div>
 
   <script type="text/javascript">
@@ -48,7 +45,7 @@
       return e.target[field].value; 
     }
 
-    const postToApi = (person, endpoint = "http://localhost:3000/api/v1/people") => {
+    const postToApi = (person, endpoint = "http://localhost:3000/api/v1/login") => {
       const payload = {
         method: 'POST',
         headers: {
@@ -63,17 +60,15 @@
         .then(console.log)
     }
 
-    const signUpForm = document.querySelector("#sign-up");
-    
-    signUpForm.addEventListener("submit", (e) => {
+    const loginForm = document.querySelector("#login");
+    const button = document.querySelector("button");
+
+    loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const person = { 
         person: {
-          first_name: value(e, "first_name"),
-          last_name: value(e, "last_name"),
           email: value(e, "email"),
           password: value(e, "password"),
-          summary: value(e, "summary")
         }
       };
 
