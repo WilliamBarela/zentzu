@@ -48,6 +48,28 @@
       return e.target[field].value; 
     }
 
+    const renderProfile = (json) => {
+      document.body.innerHTML = `<h1>${json.email}</h1>`;
+    }
+
+    const getFromApi = (endpoint = "http://localhost:3000/api/v1/profile") => {
+      const payload = {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('jwt_token')}`
+        }
+      }
+
+      fetch(endpoint, payload)
+        .then(r => r.json())
+        .then(json => renderProfile(json))
+    }
+
+    const saveToken = (json) => {
+      localStorage.setItem("jwt_token", json["jwt_token"]);
+      getFromApi();
+    }
+
     const postToApi = (person, endpoint = "http://localhost:3000/api/v1/people") => {
       const payload = {
         method: 'POST',
@@ -60,7 +82,7 @@
 
       fetch(endpoint, payload)
         .then(r => r.json())
-        .then(console.log)
+        .then(json =>  saveToken(json))
     }
 
     const signUpForm = document.querySelector("#sign-up");
