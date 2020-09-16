@@ -1,19 +1,17 @@
 import React from 'react';
-import logo from './img/lauburu.svg';
+//import logo from './img/lauburu.svg';
 import './css/App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import Login from "./components/Login.js";
 import Register from "./components/Register.js";
 import Profile from "./components/Profile.js";
-
-const Courses = () => <h1>Courses</h1>
-const PersonCourses = () => <h1>Person Courses</h1>
+import Courses from "./components/Courses.js";
+import PersonCourses from "./components/PersonCourses.js"
 
 function App() {
   return (
