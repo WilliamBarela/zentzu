@@ -7,11 +7,13 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 
+//FIXME: make another component called Course
+//use useParams for :courseId to allow for saveable and usable urls of a course for the index
+
 //FIXME: make me a component with a form to create a course
 const CoursesNew = () => <h1>Form to Create New Course</h1>;
 
 //FIXME: make me a component which lists all courses
-//use useParams to allow for saveable urls of a course
 const CoursesIndex = ({match}) => {
   return(
     <>
@@ -33,6 +35,7 @@ export default function Courses() {
           <CoursesNew />
         </Route>
         <Route path={`${match.path}/:courseId`}>
+          { /* FIXME: <Course /> */ }
         </Route>
         <Route path={`${match.path}`}>
           <CoursesIndex match={match} />
