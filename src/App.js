@@ -8,22 +8,34 @@ import {
   Link
 } from "react-router-dom";
 
-const Home = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
-const Users = () => <h2>Users</h2>;
+const Login = () => <h1>Login</h1>
+const Register = () => <h1>Register</h1>
+const Profile = () => <h1>Profile</h1>
+const Courses = () => <h1>Courses</h1>
+const PersonCourses = () => <h1>Person Courses</h1>
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/about">
-          <About />
+        <Route path="/login">
+          <Login />
         </Route>
-        <Route path="/users">
-          <Users />
+
+        <Route path="/profile">
+          <Profile />
         </Route>
+
+        <Route path="/courses">
+          <Courses />
+        </Route>
+
+        <Route path="/person/courses">
+          <PersonCourses />
+        </Route>
+
         <Route path="/">
-          <Home />
+          <Register />
         </Route>
       </Switch>
     </Router>
