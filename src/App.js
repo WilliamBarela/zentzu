@@ -8,9 +8,10 @@ import {
   Link
 } from "react-router-dom";
 
-const Login = () => <h1>Login</h1>
-const Register = () => <h1>Register</h1>
-const Profile = () => <h1>Profile</h1>
+import Login from "./components/Login.js";
+import Register from "./components/Register.js";
+import Profile from "./components/Profile.js";
+
 const Courses = () => <h1>Courses</h1>
 const PersonCourses = () => <h1>Person Courses</h1>
 
