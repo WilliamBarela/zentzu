@@ -8,8 +8,8 @@ import {
 } from "react-router-dom";
 
 import Login from "./components/Login.js";
-import Register from "./components/Register.js";
-import Profile from "./components/Profile.js";
+import Register from "./views/people/Register.js";
+import Profile from "./views/people/Profile.js";
 import Courses from "./routes/Courses.js";
 import PersonCourses from "./components/PersonCourses.js"
 
