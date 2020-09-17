@@ -8,9 +8,7 @@ import {
 
 import CoursesIndex from '../views/courses/Index.js';
 import CoursesNew from '../views/courses/New.js';
-
-//FIXME: make another component called Course
-//use useParams for :courseId to allow for saveable and usable urls of a course for the index
+import CoursesShow from '../views/courses/Show.js';
 
 export default function Courses() {
   let match = useRouteMatch();
@@ -22,7 +20,7 @@ export default function Courses() {
           <CoursesNew />
         </Route>
         <Route path={`${match.path}/:courseId`}>
-          { /* FIXME: <Course /> */ }
+          <CoursesShow />
         </Route>
         <Route path={`${match.path}`}>
           <CoursesIndex match={match} />
