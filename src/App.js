@@ -12,6 +12,7 @@ import Courses from "./routes/Courses.js";
 import Login from "./components/Login.js";
 import PeopleNew from './views/people/New.js';
 import Profile from './views/people/Profile.js';
+import ProtectedRoute from './components/ProtectedRoute.js';
 
 function App() {
   return (
@@ -21,9 +22,7 @@ function App() {
           <Login />
         </Route>
 
-        <Route path="/profile">
-          <Profile />
-        </Route>
+        <ProtectedRoute path="/profile" component={Profile} />
 
         <Route path="/courses">
           <Courses />
