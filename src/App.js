@@ -10,7 +10,7 @@ import {
 import Login from "./components/Login.js";
 import Register from "./components/Register.js";
 import Profile from "./components/Profile.js";
-import Courses from "./components/Courses.js";
+import Courses from "./routes/Courses.js";
 import PersonCourses from "./components/PersonCourses.js"
 
 function App() {
