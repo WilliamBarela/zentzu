@@ -24,9 +24,7 @@ function App() {
 
         <ProtectedRoute path="/profile" component={Profile} />
 
-        <Route path="/courses">
-          <Courses />
-        </Route>
+        <ProtectedRoute path="/courses" component={Courses} />
 
         <Route path="/people">
           <People />
