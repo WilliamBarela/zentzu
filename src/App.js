@@ -7,11 +7,11 @@ import {
   Route,
 } from "react-router-dom";
 
-import Login from "./components/Login.js";
-import Register from "./views/people/Register.js";
-import Profile from "./views/people/Profile.js";
+import People from "./routes/People.js";
 import Courses from "./routes/Courses.js";
-import PersonCourses from "./components/PersonCourses.js"
+import Login from "./components/Login.js";
+import PeopleNew from './views/people/New.js';
+import Profile from './views/people/Profile.js';
 
 function App() {
   return (
@@ -29,12 +29,12 @@ function App() {
           <Courses />
         </Route>
 
-        <Route path="/person/courses">
-          <PersonCourses />
+        <Route path="/people">
+          <People />
         </Route>
 
         <Route path="/">
-          <Register />
+          <PeopleNew />
         </Route>
       </Switch>
     </Router>
